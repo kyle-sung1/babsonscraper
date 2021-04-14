@@ -92,6 +92,7 @@ def getFoodItems(periodID):
     #print(bfList[0].nutrients)
     #print(bfList[0].ingredients)
     #print(bfList[0].filters)
+    return bfList
 
 
 
