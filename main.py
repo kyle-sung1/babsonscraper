@@ -36,9 +36,11 @@ def getPeriod(period=None):
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'
     }
     today = date.today()
-    url = "https://api.dineoncampus.com/v1/location/5880da183191a21e8af61adc/periods/607505c13a585b19a5fed9b5?platform=0&date=" + str(today)
+    url = "https://api.dineoncampus.com/v1/location/5880da183191a21e8af61adc/periods?platform=0&date=" + str(today)
     response = requests.get(url, headers=headers) # send request with headers
     json_data = json.loads(response.text) # decode json that is returned into parsable dictionary
+    if json_data["status"] != "success": # in case status isnt successful
+        raise Exception("getPeriod Status not successful")
     # return the period id for each of the meal periods
     if period.lower() == "breakfast":
         for item in json_data['periods']:
@@ -54,6 +56,7 @@ def getPeriod(period=None):
                 return item['id']
     else:
         print("no period selected") # or we could raise exception actually
+        raise Exception("no period was selected")
 
 
 def getFoodItems(periodID):
