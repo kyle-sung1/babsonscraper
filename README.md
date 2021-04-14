@@ -3,8 +3,9 @@
 
 **TODO:**
 - [ ] we could run scheduling, so that you cannot call getPeriod("breakfast") past breakfast, since that raises an error. Instead, add 1 to the date so that it returns the breakfast menu for tomorrow. Or we could return an error like "Cant look at breakfast menu past breakfast"
-- [ ] implement flask backend and a db that stores menu items throughout day and purges at night to save memory
-- [ ] implement frontend...using dart?
+- [ ] add ```self.portion``` into ```Food``` class and assign it in ```getFoodItems```
+- [ ] implement flask backend and a db (mysql?) that stores menu items throughout day and purges at night to save memory
+- [ ] implement frontend...using flutter?
 
 **All attributes of a Food object are strings except nutrients and filters, which are lists:** <br>
 Example nutrients: <br>
