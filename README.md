@@ -3,6 +3,9 @@
 
 **TODO:**
 - [ ] we could run scheduling, so that you cannot call getPeriod("breakfast") past breakfast, since that raises an error. Instead, add 1 to the date so that it returns the breakfast menu for tomorrow. Or we could return an error like "Cant look at breakfast menu past breakfast". OR we can default to the same period of the following date, if that meal period has already passed. 
+- lunch < 2
+- breakfast < 11
+- dinner < 8
 - [ ] add ```self.portion``` into ```Food``` class and assign it in ```getFoodItems```
 - [ ] get rid of asterisk in elements in ```self.filters```
 - [ ] add option to specify date, perhaps by passing date as a parameter in `getPeriod(period, date=date.today())` with default value set to `date.today()`. see TODO #1, default will be next day if period has passed.
